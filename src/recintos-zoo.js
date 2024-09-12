@@ -29,7 +29,7 @@ class RecintosZoo {
     const animalInfo = this.animais[especie];
     let recintosViaveis = [];
 
-    // Verificar cada recinto
+    // Verifica cada recinto
     this.recintos.forEach(recinto => {
       let espacoOcupado = recinto.animais.reduce((total, animal) => total + (animal.tamanho * animal.quantidade), 0);
       let espacoLivre = recinto.tamanho - espacoOcupado;
@@ -37,7 +37,7 @@ class RecintosZoo {
       const biomaCompativel = animalInfo.bioma.some(bioma => recinto.bioma.includes(bioma));
       if (!biomaCompativel) return;
 
-      // Verificar compatibilidade de espécies
+      // Verifica compatibilidade de espécies
       let compatível = true;
       for (const animal of recinto.animais) {
         const infoAnimal = this.animais[animal.especie];
